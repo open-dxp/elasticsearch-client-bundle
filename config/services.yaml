@@ -1,0 +1,8 @@
+services:
+
+    OpenDxp\Bundle\ElasticsearchClientBundle\MyService:
+        class: OpenDxp\Bundle\ElasticsearchClientBundle\MyService
+        factory: [ 'OpenDxp\Bundle\ElasticSearchClientBundle\MyServiceFactory', create ]
+        arguments: ['@logger']
+        tags:
+            - { name: monolog.logger, channel: elasticsearch.es }
