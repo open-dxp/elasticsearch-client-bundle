@@ -38,7 +38,6 @@ Thumbs.db
 /web/var/
 
 # PHP-CS-Fixer
-/.php-cs-fixer.dist.php
 /.php-cs-fixer.cache
 
 # composer
