@@ -25,10 +25,10 @@ use OpenDxp\SearchClient\Exception\ClientException;
 /**
  * @internal
  */
-final class SearchClient implements ElasticsearchClientInterface
+final readonly class SearchClient implements ElasticsearchClientInterface
 {
     public function __construct(
-        private readonly Client $client
+        private Client $client
     ) {
     }
 

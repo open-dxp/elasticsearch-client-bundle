@@ -32,6 +32,7 @@ class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implemen
 
     const OPENDXP_CLIENT_PREFIX = 'opendxp.elasticsearch.custom_client.';
 
+    #[\Override]
     public function getAlias(): string
     {
         return 'opendxp_elasticsearch_client';
