@@ -46,8 +46,6 @@ class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implemen
 
         $definitions = [];
 
-        print_r($mergedConfig);
-
         foreach ($mergedConfig['es_clients'] as $name => $clientConfig) {
             $definition = new Definition(Client::class);
             $definition->setFactory(EsClientFactory::class . '::create');
