@@ -3,7 +3,10 @@
     "license": "GPL-3.0+",
     "type": "symfony-bundle",
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
     },
     "require": {
         "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
