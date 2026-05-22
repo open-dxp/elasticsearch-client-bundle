@@ -67,7 +67,7 @@ jobs:
         with:
             app_env: test
             opendxp_test: 1
-            install_codeception_framework: true
+            install_codeception_framework: false
             php_version: ${{ matrix.matrix.php-version }}
             symfony: ${{ matrix.matrix.symfony }}
             dependencies: ${{ matrix.matrix.dependencies }}
