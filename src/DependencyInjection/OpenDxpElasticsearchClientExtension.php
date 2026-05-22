@@ -28,9 +28,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
 class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implements PrependExtensionInterface
 {
-    const CLIENT_SERVICE_PREFIX = 'opendxp.elasticsearch_client.';
+    public const string CLIENT_SERVICE_PREFIX = 'opendxp.elasticsearch_client.';
 
-    const OPENDXP_CLIENT_PREFIX = 'opendxp.elasticsearch.custom_client.';
+    public const string OPENDXP_CLIENT_PREFIX = 'opendxp.elasticsearch.custom_client.';
 
     #[\Override]
     public function getAlias(): string
@@ -44,6 +44,8 @@ class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implemen
         $loader->load('services.yaml');
 
         $definitions = [];
+
+        print_r($mergedConfig);
 
         foreach ($mergedConfig['es_clients'] as $name => $clientConfig) {
             $definition = new Definition(Client::class);
@@ -61,7 +63,7 @@ class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implemen
         $container->addDefinitions($definitions);
     }
 
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
         $loader->load('default_config.yaml');
