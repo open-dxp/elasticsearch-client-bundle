@@ -8,8 +8,7 @@
  * Full copyright and license information is available in
  * LICENSE.md which is distributed with this source code.
  *
- * @copyright  Copyright (c) Pimcore GmbH (https://pimcore.com)
- * @copyright  Modification Copyright (c) OpenDXP (https://www.opendxp.ch)
+ * @copyright  Copyright (c) OpenDXP (https://www.opendxp.io)
  * @license    https://www.gnu.org/licenses/gpl-3.0.html  GNU General Public License version 3 (GPLv3)
  */
 
@@ -18,6 +17,7 @@ namespace OpenDxp\Bundle\ElasticsearchClientBundle\DependencyInjection;
 use Elastic\Elasticsearch\Client;
 use OpenDxp\Bundle\ElasticsearchClientBundle\EsClientFactory;
 use OpenDxp\Bundle\ElasticsearchClientBundle\SearchClient\SearchClient;
+use Override;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -32,7 +32,7 @@ class OpenDxpElasticsearchClientExtension extends ConfigurableExtension implemen
 
     public const string OPENDXP_CLIENT_PREFIX = 'opendxp.elasticsearch.custom_client.';
 
-    #[\Override]
+    #[Override]
     public function getAlias(): string
     {
         return 'opendxp_elasticsearch_client';
