@@ -12,6 +12,8 @@
         "psr/log": "*"
     },
     "require-dev": {
+        "symfony/dotenv": "^7.4",
+        "symfony/runtime": "^7.4",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-symfony": "^2.0.14"
     },
