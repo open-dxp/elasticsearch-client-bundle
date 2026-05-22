@@ -21,6 +21,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class OpenDxpElasticsearchClientBundle extends Bundle
 {
+    #[\Override]
     public function getContainerExtension(): ?ExtensionInterface
     {
         if (null === $this->extension) {
@@ -30,6 +31,7 @@ class OpenDxpElasticsearchClientBundle extends Bundle
         return $this->extension;
     }
 
+    #[\Override]
     public function getPath(): string
     {
         return \dirname(__DIR__);
