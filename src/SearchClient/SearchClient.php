@@ -27,9 +27,8 @@ use OpenDxp\SearchClient\Exception\ClientException;
  */
 final readonly class SearchClient implements ElasticsearchClientInterface
 {
-    public function __construct(
-        private Client $client
-    ) {
+    public function __construct(private Client $client)
+    {
     }
 
     public function getOriginalClient(): Client
