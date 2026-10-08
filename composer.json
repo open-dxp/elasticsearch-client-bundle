@@ -5,20 +5,22 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+            "pestphp/pest-plugin": true,
             "symfony/runtime": true
         }
     },
     "require": {
         "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
-        "open-dxp/opendxp": "^1.1",
+        "open-dxp/opendxp": "^1.5",
         "elasticsearch/elasticsearch": "^8.0",
         "psr/log": "*"
     },
     "require-dev": {
-        "symfony/dotenv": "^7.4",
-        "symfony/runtime": "^7.4",
+        "open-dxp/test-foundation": "^1.0",
         "phpstan/phpstan": "^2.0",
-        "phpstan/phpstan-symfony": "^2.0.14"
+        "phpstan/phpstan-symfony": "^2.0.14",
+        "symfony/dotenv": "^7.4",
+        "symfony/runtime": "^7.4"
     },
     "autoload": {
         "psr-4": {
@@ -26,8 +28,8 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "kernel/Kernel.php"
-        ]
+        "psr-4": {
+            "OpenDxp\\Bundle\\ElasticsearchClientBundle\\Tests\\": "tests/"
+        }
     }
 }
